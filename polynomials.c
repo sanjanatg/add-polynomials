@@ -7,7 +7,8 @@
         exit(0); \
     }
     
-typedef struct{
+typedef struct
+{
     int coeff,expo;
 }POLYNOMIAL;
 
@@ -49,8 +50,12 @@ int main()
     CALLOC(result, POLYNOMIAL, n1);
     int n,i,j,terms=0,resultTerms=0;
     int Numterms;
+
+    
     printf("enter the number of polynomials : ");
     scanf("%d",&n);
+
+    //reading values
     for(i=0;i<n;i++)
     {
         printf("\nEnter the number of terms in the polynomial %d: ",i+1);
@@ -66,9 +71,12 @@ int main()
         }
         terms+=Numterms;
     }
+
+    
     addpoly(p,terms,result,&resultTerms);//Function call;
     
     printf("\n-----------Resulting Polynomial----------- :\n");
+    
     for(i=0;i<resultTerms;i++)
     {
         if(result[i].coeff!=0)
